@@ -26,16 +26,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+
+    // Support lib
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+
+    // kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.google.dagger:dagger:2.10'
-    kapt 'com.google.dagger:dagger-compiler:2.10'
+
     compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
@@ -49,6 +48,16 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     kapt 'com.android.databinding:compiler:2.3.1'
     compile 'com.jakewharton.timber:timber:4.5.1'
+
+    // DI
+    compile 'com.google.dagger:dagger:2.10'
+    kapt 'com.google.dagger:dagger-compiler:2.10'
+
+    testCompile 'junit:junit:4.12'
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
 }
 repositories {
     mavenCentral()

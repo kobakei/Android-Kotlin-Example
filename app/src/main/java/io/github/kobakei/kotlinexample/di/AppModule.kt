@@ -1,10 +1,12 @@
 package io.github.kobakei.kotlinexample.di
 
+import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import io.github.kobakei.kotlinexample.App
+import io.github.kobakei.kotlinexample.model.entity.OrmaDatabase
 import io.github.kobakei.kotlinexample.model.net.GitHubApi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -20,6 +22,12 @@ import javax.inject.Singleton
  */
 @Module
 class AppModule(private val app: App) {
+
+    @Singleton
+    @Provides
+    fun provideContext(): Context {
+        return app.applicationContext
+    }
 
     @Singleton
     @Provides
@@ -45,4 +53,13 @@ class AppModule(private val app: App) {
         return retrofit.create(GitHubApi::class.java)
     }
 
+    /**
+     * kaptの制限で、動的に生成されるOrmaDatabaseはprovideできない
+     * 仕方なので、OrmaDatabaseをラップしたOrmaHolderというシングルトンを返す
+     */
+    @Singleton
+    @Provides
+    fun provideOrmaDatabase(context: Context): OrmaHolder {
+        return OrmaHolder(context)
+    }
 }

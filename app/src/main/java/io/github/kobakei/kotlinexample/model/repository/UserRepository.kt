@@ -20,18 +20,31 @@ import javax.inject.Singleton
 class UserRepository
 @Inject constructor(private val gitHubApi: GitHubApi, private val userDao: UserDao) {
 
+    var dirty: Boolean = true
+
     /**
      * 指定のユーザー／リポジトリのコントリビュータを取得する
      */
     fun findContributorsByRepo(owner: String, repo: String): Single<List<User>> {
-        return gitHubApi.listContributors(owner, repo)
+        if (dirty) {
+            return gitHubApi.listContributors(owner, repo)
+                    .flatMap {
+                        repos -> userDao.deleteAll().map { repos }
+                    }
+                    .flatMap {
+                        repos -> userDao.insertAll(repos).map { repos }
+                    }
+                    .doOnSuccess { dirty = false }
+        } else {
+            return userDao.findAll()
+        }
     }
 
     /**
      * 指定のIDのユーザーを取得する
      */
-    fun findUserById(userId: Long) {
-        TODO()
+    fun findUserById(userId: Long): Single<User> {
+        return userDao.findById(userId)
     }
 
 }
