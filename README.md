@@ -7,6 +7,10 @@ Kotlinで書いたAndroidのサンプルアプリです。
 
 droidkaigi 2017 appのコントリビュータをリスト表示します。各コントリビュータをクリックすると、そのコントリビュータの詳細を表示します。
 
+|Main|Detail|
+|---|---|
+| ![1](https://cloud.githubusercontent.com/assets/900756/25039948/6fee9b4c-2141-11e7-913e-e84b884fbb1b.png) | ![2](https://cloud.githubusercontent.com/assets/900756/25039949/72733cce-2141-11e7-9707-14d05bbf3d7c.png) |
+
 ## Architecture
 
 MVVM with data binding
