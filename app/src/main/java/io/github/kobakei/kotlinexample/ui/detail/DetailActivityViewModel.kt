@@ -25,7 +25,7 @@ class DetailActivityViewModel
     override fun onResume() {
         super.onResume()
 
-        userRepository.findUserById(userId)
+        val disposable = userRepository.findUserById(userId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(
@@ -36,6 +36,7 @@ class DetailActivityViewModel
                             Timber.e(it)
                         }
                 )
+        compositeDisposable.add(disposable)
     }
 
 }

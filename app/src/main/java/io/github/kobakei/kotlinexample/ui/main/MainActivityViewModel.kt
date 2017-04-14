@@ -27,7 +27,7 @@ class MainActivityViewModel
 
         val owner = "DroidKaigi"
         val repo = "conference-app-2017"
-        userRepository.findContributorsByRepo(owner, repo)
+        val disposable = userRepository.findContributorsByRepo(owner, repo)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeBy(
@@ -40,6 +40,7 @@ class MainActivityViewModel
                             Timber.e(it)
                         }
                 )
+        compositeDisposable.add(disposable)
     }
 
     override fun onPause() {

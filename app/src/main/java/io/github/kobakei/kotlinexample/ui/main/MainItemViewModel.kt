@@ -1,7 +1,6 @@
 package io.github.kobakei.kotlinexample.ui.main
 
 import android.app.Activity
-import android.content.Intent
 import android.databinding.ObservableField
 import android.view.View
 import io.github.kobakei.kotlinexample.model.entity.User
