@@ -47,6 +47,7 @@ dependencies {
     kapt 'com.github.gfx.android.orma:orma-processor:4.2.3'
     compile 'com.github.gfx.android.orma:orma:4.2.3'
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    kapt 'com.android.databinding:compiler:2.3.1'
 }
 repositories {
     mavenCentral()
