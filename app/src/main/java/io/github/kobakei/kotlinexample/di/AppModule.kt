@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import io.github.kobakei.kotlinexample.App
+import io.github.kobakei.kotlinexample.model.dao.OrmaHolder
 import io.github.kobakei.kotlinexample.model.entity.OrmaDatabase
 import io.github.kobakei.kotlinexample.model.net.GitHubApi
 import okhttp3.OkHttpClient

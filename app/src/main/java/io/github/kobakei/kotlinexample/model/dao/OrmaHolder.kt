@@ -1,4 +1,4 @@
-package io.github.kobakei.kotlinexample.di
+package io.github.kobakei.kotlinexample.model.dao
 
 import android.content.Context
 import io.github.kobakei.kotlinexample.model.entity.OrmaDatabase

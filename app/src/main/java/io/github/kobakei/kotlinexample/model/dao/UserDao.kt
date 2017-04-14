@@ -1,6 +1,6 @@
 package io.github.kobakei.kotlinexample.model.dao
 
-import io.github.kobakei.kotlinexample.di.OrmaHolder
+import io.github.kobakei.kotlinexample.model.dao.OrmaHolder
 import io.github.kobakei.kotlinexample.model.entity.OrmaDatabase
 import io.github.kobakei.kotlinexample.model.entity.User
 import io.github.kobakei.kotlinexample.model.entity.User_Relation

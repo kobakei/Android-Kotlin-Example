@@ -7,12 +7,16 @@ Kotlinで書いたAndroidのサンプルアプリです。
 
 droidkaigi 2017 appのコントリビュータをリスト表示します。各コントリビュータをクリックすると、そのコントリビュータの詳細を表示します。
 
+## Architecture
+
+MVVM with data binding
+
 ## Library
 
 - Data binding
 - Dagger 2
-- RxJava
-- Retrofit
+- RxJava / RxAndroid / RxKotlin
+- Retrofit / OkHttp
 - Orma
 - Glide
 
