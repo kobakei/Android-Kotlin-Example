@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.github.kobakei.kotlinexample.ui.main.MainItemViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            tools:src="@mipmap/ic_launcher_round"
+            app:imageUrl="@{viewModel.user.avatar_url}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imageView"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:text="@{viewModel.user.login}"
+            tools:text="kobakei"
+            android:textSize="16dp"
+            android:textColor="#000"/>
+
+    </RelativeLayout>
+
+</layout>

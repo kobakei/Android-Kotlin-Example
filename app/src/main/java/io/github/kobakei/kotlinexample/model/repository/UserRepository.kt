@@ -1,7 +1,9 @@
 package io.github.kobakei.kotlinexample.model.repository
 
 import io.github.kobakei.kotlinexample.model.dao.UserDao
+import io.github.kobakei.kotlinexample.model.entity.User
 import io.github.kobakei.kotlinexample.model.net.GitHubApi
+import io.reactivex.Single
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -18,12 +20,18 @@ import javax.inject.Singleton
 class UserRepository
 @Inject constructor(private val gitHubApi: GitHubApi, private val userDao: UserDao) {
 
-    fun findContributorsByRepo(repo: String) {
-
+    /**
+     * 指定のユーザー／リポジトリのコントリビュータを取得する
+     */
+    fun findContributorsByRepo(owner: String, repo: String): Single<List<User>> {
+        return gitHubApi.listContributors(owner, repo)
     }
 
+    /**
+     * 指定のIDのユーザーを取得する
+     */
     fun findUserById(userId: Long) {
-
+        TODO()
     }
 
 }
