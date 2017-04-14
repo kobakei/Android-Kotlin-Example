@@ -3,15 +3,24 @@ Android Kotlin Example
 
 Kotlinで書いたAndroidのサンプルアプリです。
 
-# Library
+## Spec
+
+droidkaigi 2017 appのコントリビュータをリスト表示します。各コントリビュータをクリックすると、そのコントリビュータの詳細を表示します。
+
+## Library
 
 - Data binding
 - Dagger 2
 - RxJava
 - Retrofit
 - Orma
+- Glide
 
-# License
+## Test
+
+TODO
+
+## License
 
 ```
 Copyright 2017 Keisuke Kobayashi
