@@ -11,6 +11,8 @@ import com.bumptech.glide.Glide
  * Created by keisukekobayashi on 2017/04/14.
  */
 @BindingAdapter(value = "imageUrl")
-fun ImageView.setImageUrl(url: String) {
-    Glide.with(this.context).load(url).into(this)
+fun ImageView.setImageUrl(url: String?) {
+    if (url != null) {
+        Glide.with(this.context).load(url).into(this)
+    }
 }

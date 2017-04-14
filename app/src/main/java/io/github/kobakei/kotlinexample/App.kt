@@ -1,6 +1,7 @@
 package io.github.kobakei.kotlinexample
 
 import android.app.Application
+import com.facebook.stetho.Stetho
 import io.github.kobakei.kotlinexample.di.AppComponent
 import io.github.kobakei.kotlinexample.di.AppModule
 import io.github.kobakei.kotlinexample.di.DaggerAppComponent
@@ -17,6 +18,8 @@ class App: Application() {
         super.onCreate()
 
         Timber.plant(Timber.DebugTree())
+
+        Stetho.initializeWithDefaults(this)
 
         injector = DaggerAppComponent.builder()
                 .appModule(AppModule(this))

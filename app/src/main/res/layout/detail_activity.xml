@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="io.github.kobakei.kotlinexample.ui.detail.DetailActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.github.kobakei.kotlinexample.ui.detail.DetailActivityViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:imageUrl="@{viewModel.user.avatar_url}"
+            tools:src="@mipmap/ic_launcher_round"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/imageView"
+            android:layout_centerHorizontal="true"
+            android:text="@{viewModel.user.login}"
+            tools:text="kobakei"/>
+
+    </RelativeLayout>
+
+
+</layout>

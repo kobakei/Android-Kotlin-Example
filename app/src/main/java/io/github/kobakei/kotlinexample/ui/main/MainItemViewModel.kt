@@ -6,6 +6,7 @@ import android.databinding.ObservableField
 import android.view.View
 import io.github.kobakei.kotlinexample.model.entity.User
 import io.github.kobakei.kotlinexample.ui.base.ViewModel
+import io.github.kobakei.kotlinexample.ui.detail.DetailActivity
 import javax.inject.Inject
 
 /**
@@ -15,7 +16,6 @@ class MainItemViewModel @Inject constructor(private val activity: Activity): Vie
     val user: ObservableField<User> = ObservableField()
 
     fun onItemClick(view: View) {
-        val intent = Intent(activity, MainActivity::class.java)
-        activity.startActivity(intent)
+        DetailActivity.start(activity, user.get().id)
     }
 }
