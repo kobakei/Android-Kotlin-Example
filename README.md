@@ -26,6 +26,14 @@ MVVM with data binding
 
 ## Test
 
+### 単体テスト
+
+- Robolectric + Mockito2
+  - Mockito2で、final classのモック化が可能になったので、PowerMockは使用していません。
+
+
+### UIテスト
+
 TODO
 
 ## License

@@ -8,7 +8,6 @@ import com.github.gfx.android.orma.annotation.Table
  * Created by keisukekobayashi on 2017/04/14.
  */
 @Table
-data class User(
-        @PrimaryKey(auto = false) var id: Long = 0L,
-        @Column var login: String = "",
-        @Column var avatar_url: String = "")
+data class User(@PrimaryKey(auto = false) var id: Long = 0L,
+                @Column var login: String = "",
+                @Column var avatar_url: String = "")
