@@ -17,9 +17,10 @@ MVVM with data binding
 
 ## Library
 
+- Architecture components
 - Data binding
 - Dagger 2
-- RxJava / RxAndroid / RxKotlin
+- RxJava / RxAndroid / RxKotlin / AutoDispose
 - Retrofit / OkHttp
 - Orma
 - Glide
