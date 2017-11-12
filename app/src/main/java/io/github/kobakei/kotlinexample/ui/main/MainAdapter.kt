@@ -50,7 +50,7 @@ class MainAdapter(
 
     override fun onBindViewHolder(holder: MainViewHolder?, position: Int) {
         val binding = holder!!.binding as MainItemBinding
-        binding.viewModel.user.set(items[position])
+        binding.viewModel?.user?.set(items[position])
     }
 
     override fun getItemCount(): Int {

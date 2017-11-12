@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.0"
     defaultConfig {
         applicationId "io.github.kobakei.kotlinexample"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -28,39 +28,47 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     // Support lib
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:27.0.1'
+    compile 'com.android.support:support-v4:27.0.1'
+    compile 'com.android.support:recyclerview-v7:27.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // Data binding
+    kapt 'com.android.databinding:compiler:3.0.0'
 
     // kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    compile 'com.squareup.okhttp3:okhttp:3.6.0'
-    compile 'com.squareup.retrofit2:retrofit:2.2.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.8'
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+    compile 'io.reactivex.rxjava2:rxjava:2.1.6'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxkotlin:2.0.0'
-    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'io.reactivex.rxjava2:rxkotlin:2.1.0'
+
+    compile 'com.google.code.gson:gson:2.8.2'
+
     kapt 'com.github.gfx.android.orma:orma-processor:4.2.3'
     compile 'com.github.gfx.android.orma:orma:4.2.3'
+
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    kapt 'com.android.databinding:compiler:2.3.1'
+
     compile 'com.jakewharton.timber:timber:4.5.1'
 
     // DI
-    compile 'com.google.dagger:dagger:2.10'
-    kapt 'com.google.dagger:dagger-compiler:2.10'
+    compile 'com.google.dagger:dagger:2.13'
+    kapt 'com.google.dagger:dagger-compiler:2.13'
 
     compile 'com.facebook.stetho:stetho:1.5.0'
     compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
     testCompile 'junit:junit:4.12'
-    testCompile 'org.robolectric:robolectric:3.3.2'
-    testCompile 'org.mockito:mockito-core:2.7.22'
+    testCompile 'org.robolectric:robolectric:3.5'
+    testCompile 'org.mockito:mockito-core:2.8.9'
 
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 }
