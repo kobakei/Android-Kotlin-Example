@@ -35,6 +35,7 @@ class DetailActivity : BaseActivity() {
 
         // ビューモデルを作成
         viewModel = ViewModelProviders.of(this, DaggerFactory(this)).get(DetailViewModel::class.java)
+        viewModel.lifecycle = lifecycle
         lifecycle.addObserver(viewModel)
 
         // 受け取ったパラメータをビューモデルに渡す

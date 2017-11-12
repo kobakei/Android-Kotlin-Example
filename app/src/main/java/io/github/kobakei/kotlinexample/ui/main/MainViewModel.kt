@@ -23,9 +23,10 @@ import javax.inject.Inject
 @PerActivity
 class MainViewModel
 @Inject constructor(
-        private val lifecycle: Lifecycle,
         private val userRepository: UserRepository
 ) : ViewModel(), LifecycleObserver {
+
+    lateinit var lifecycle: Lifecycle
 
     val users: ObservableList<User> = ObservableArrayList()
 

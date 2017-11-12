@@ -18,6 +18,7 @@ class MainActivity : BaseActivity() {
 
         // ViewModel
         viewModel = ViewModelProviders.of(this, DaggerFactory(this)).get(MainViewModel::class.java)
+        viewModel.lifecycle = lifecycle
         lifecycle.addObserver(viewModel)
 
         // レイアウト

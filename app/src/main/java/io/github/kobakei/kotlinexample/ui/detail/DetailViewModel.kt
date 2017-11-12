@@ -22,9 +22,10 @@ import javax.inject.Inject
 @PerActivity
 class DetailViewModel
 @Inject constructor(
-        private val lifecycle: Lifecycle,
         private val userRepository: UserRepository
 ) : ViewModel(), LifecycleObserver {
+
+    lateinit var lifecycle: Lifecycle
 
     val user: ObservableField<User> = ObservableField()
 
