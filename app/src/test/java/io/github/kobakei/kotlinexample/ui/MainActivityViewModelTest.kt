@@ -3,7 +3,7 @@ package io.github.kobakei.kotlinexample.ui
 import io.github.kobakei.kotlinexample.BuildConfig
 import io.github.kobakei.kotlinexample.model.entity.User
 import io.github.kobakei.kotlinexample.model.repository.UserRepository
-import io.github.kobakei.kotlinexample.ui.main.MainActivityViewModel
+import io.github.kobakei.kotlinexample.ui.main.MainViewModel
 import io.reactivex.Single
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.schedulers.Schedulers
@@ -45,7 +45,7 @@ class MainActivityViewModelTest {
         given(userRepository.findContributorsByRepo("DroidKaigi", "conference-app-2017"))
                 .willReturn(Single.just(users))
 
-        val viewModel = MainActivityViewModel(userRepository)
+        val viewModel = MainViewModel(userRepository)
 
         viewModel.onResume()
 

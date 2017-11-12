@@ -36,20 +36,31 @@ dependencies {
     // Data binding
     kapt 'com.android.databinding:compiler:3.0.0'
 
+    // Architecture component
+    implementation "android.arch.lifecycle:extensions:1.0.0"
+
     // kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
+    // OkHttp & Retrofit
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
 
+    // RxJava
     compile 'io.reactivex.rxjava2:rxjava:2.1.6'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxkotlin:2.1.0'
 
+    compile 'com.uber.autodispose:autodispose-kotlin:0.4.0'
+    compile 'com.uber.autodispose:autodispose-android-kotlin:0.4.0'
+    compile 'com.uber.autodispose:autodispose-android-archcomponents-kotlin:0.4.0'
+
+    // Gson
     compile 'com.google.code.gson:gson:2.8.2'
 
+    // Orma
     kapt 'com.github.gfx.android.orma:orma-processor:4.2.3'
     compile 'com.github.gfx.android.orma:orma:4.2.3'
 
